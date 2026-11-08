@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<!--
+  Mehedi — Full-Stack & WordPress Developer · portfolio
+  HOW THIS PROJECT IS ORGANISED (see README.md for details)
+    index.html ........ page markup. Edit your texts here (hero, about, services, process, contact, footer).
+    css/ .............. one file per area; settings.css holds colors, font and sizes.
+    js/data.js ........ project, review and marquee content. Edit this to add or change projects and reviews.
+    js/config.js ...... behaviour settings (icon positions, speeds, distances).
+    js/*.js ........... one file per feature; main.js starts everything in the right order.
+    images/ ........... project screenshots and the fallback photo.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+{{seo}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800&display=swap" rel="stylesheet">
+<!-- styles: loaded in this order on purpose -->
+<link rel="stylesheet" href="css/settings.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/navigation.css">
+<link rel="stylesheet" href="css/hero.css">
+<link rel="stylesheet" href="css/marquee.css">
+<link rel="stylesheet" href="css/services.css">
+<link rel="stylesheet" href="css/work.css">
+<link rel="stylesheet" href="css/process.css">
+<link rel="stylesheet" href="css/reviews.css">
+<link rel="stylesheet" href="css/contact.css">
+<link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="css/cursor.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/blog.css">
+</head>
+
+<body>
+<!-- magnifier filter used by the lens cursor (Chrome/Edge); other browsers show plain glass -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="lens" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+  <feImage href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cdefs%3E%3ClinearGradient id='x'%3E%3Cstop offset='0' stop-color='%23000'/%3E%3Cstop offset='1' stop-color='%23f00'/%3E%3C/linearGradient%3E%3ClinearGradient id='y' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23000'/%3E%3Cstop offset='1' stop-color='%230f0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' fill='url(%23x)'/%3E%3Crect width='100' height='100' fill='url(%23y)' style='mix-blend-mode:screen'/%3E%3C/svg%3E" preserveAspectRatio="none" result="map"/>
+  <feDisplacementMap in="SourceGraphic" in2="map" scale="-26" xChannelSelector="R" yChannelSelector="G"/>
+</filter></svg>
+
+{{nav}}
+
+<div class="scene" id="scene">
+  <div class="bg" aria-hidden="true">
+    <div class="bg-grid"></div><div class="bg-glow"></div><div class="hero-word" aria-hidden="true">mehedi.</div>
+    <pre class="bg-code" id="code">const developer = {
+  name: "Mehedi",
+  stack: ["WordPress", "React", "Node.js", "MongoDB"],
+  speed: "fast by default",
+  available: true,
+};
+
+function launch(project) {
+  const plan = discover(project);
+  const site = build(plan);
+  test(site);
+  return ship(site);
+}
+
+app.get("/api/projects", async (req, res) => {
+  const items = await Project.find();
+  res.json(items);
+});</pre>
+  </div>
+
+  <div class="stage" id="stage" aria-hidden="true"><div class="slot" id="slot"></div></div>
+
+  <!-- HERO TEXT: edit your text here -->
+  <header class="hero" id="hero"><div class="hero-inner">
+    <p class="hi"><span>Hi,</span><span class="hi-row"><span>I am Mehedi.</span><span class="hi-badges" id="hi-badges"></span></span></p>
+    <h1 class="heads">
+      <span class="set"><span class="l"><span>full-stack<sup>+</sup></span></span><span class="l"><span>developer</span></span></span>
+      <span class="set"><span class="l"><span>wordpress<sup>+</sup></span></span><span class="l"><span>developer</span></span></span>
+      <span class="set"><span class="l"><span>custom web<sup>+</sup></span></span><span class="l"><span>applications</span></span></span>
+      <span class="set"><span class="l"><span>large-scale<sup>+</sup></span></span><span class="l"><span>web apps</span></span></span>
+      <span class="sr-only"> — Mehedi Hasan, freelance full-stack, React, Next.js and WordPress developer</span>
+    </h1>
+    <p class="bio">Top Rated on Upwork. I build WordPress sites and full-stack MERN applications, from a quick launch to a large system that carries real traffic.</p>
+    <div class="meta"><a href="mailto:mehedi.hasan.mern@gmail.com">mehedi.hasan.mern@gmail.com</a><a href="https://www.upwork.com/freelancers/~0130f6d1f50aa998d6" target="_blank" rel="noopener">Upwork profile</a></div>
+    <a class="btn" href="#about">Explore my work</a>
+  </div></header>
+
+  <div class="photo" id="photo"><div class="pf twinkle" id="pf"><!-- Photo: loaded from GitHub. For best speed, download it once, save it as images/photo.jpg and replace the src below. If it cannot load, images/photo.webp is used. -->
+    <img src="https://avatars.githubusercontent.com/u/52112265?s=400&u=6d6f818adab4645ceb45ebc900f3bff86c8951ea&v=4" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='images/photo.webp'" alt="Portrait of Mehedi" width="400" height="400"></div></div>
+
+  <div class="badge up">
+    <span class="badge-liquid" aria-hidden="true"></span>
+    <span class="badge-logo"><svg viewBox="0 0 24 24" role="img" aria-label="Upwork"><path fill="#14A800" d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/></svg></span>
+    <span class="badge-text"><b>Top Rated</b><span>100% Job Success</span></span>
+  </div>
+  <div class="badge">
+    <span class="badge-liquid" aria-hidden="true"></span>
+    <span class="badge-logo"><svg viewBox="0 0 24 24" role="img" aria-label="Freelancer.com"><path fill="#29B2FE" d="M14.096 3.076l1.634 2.292L24 3.076M5.503 20.924l4.474-4.374-2.692-2.89m6.133-10.584L11.027 5.23l4.022.15M4.124 3.077l.857 1.76 4.734.294m-3.058 7.072l3.497-6.522L0 5.13m7.064 7.485l3.303 3.548 3.643-3.57 1.13-6.652-4.439-.228Z"/></svg></span>
+    <span class="badge-text"><b>30+ projects</b><span>on Freelancer.com</span></span>
+  </div>
+
+  <!-- ABOUT TEXT: edit your text here -->
+  <section class="about" id="about"><div>
+    <h2>I build sites that load fast and win clients.</h2>
+    <p>I started with WordPress and grew into full-stack development with React, Node.js and MongoDB. Today I take both: quick WordPress launches and large custom applications.</p>
+    <p>You get one developer who handles design details, backend logic, speed and launch. [Add one personal line here.]</p>
+    <a class="btn" href="#contact" data-go="contact">Get in touch</a>
+  </div></section>
+</div>
+
+<!-- MARQUEE: edit the phrases in the MARQUEE list inside the script -->
+<section class="marquee" aria-label="Highlights"><div class="marquee-track" id="marquee"></div></section>
+
+<!-- SERVICES: edit your services here -->
+<section class="services" id="services">
+  <div class="sv-head">
+    <h2><span class="l"><span>our services<sup>+</sup></span></span></h2>
+    <p>From the first idea to long-term care, one developer takes care of everything.</p>
+  </div>
+  <div class="sv-grid">
+    <article class="svc"><div class="svc-top"><span class="svc-num">01</span><span class="svc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 16l9 5 9-5"/></svg></span></div>
+      <h3>Full-stack development</h3><p>I build complete web applications with React, Node.js and MongoDB, from the database to the interface. You get one developer who owns the whole system and keeps it consistent.</p></article>
+    <article class="svc"><div class="svc-top"><span class="svc-num">02</span><span class="svc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14l-2 2 2 2M16 14l2 2-2 2M13 13l-2 6"/></svg></span></div>
+      <h3>Front-end development</h3><p>I turn designs into fast, accessible interfaces that feel smooth on every screen. Clean components and careful animation keep the experience polished and easy to extend.</p></article>
+    <article class="svc"><div class="svc-top"><span class="svc-num">03</span><span class="svc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M6.5 9l2.5 7 3-8 3 8 2.5-7"/></svg></span></div>
+      <h3>WordPress development</h3><p>I create custom themes, plugins and WooCommerce stores that you can manage without touching code. Every build is secure, lightweight and ready to grow with your business.</p></article>
+    <article class="svc"><div class="svc-top"><span class="svc-num">04</span><span class="svc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg></span></div>
+      <h3>Website speed optimization</h3><p>I find what slows your site down and fix it, from images and scripts to hosting and caching. Faster pages mean better Core Web Vitals, better rankings and more visitors who stay.</p></article>
+    <article class="svc"><div class="svc-top"><span class="svc-num">05</span><span class="svc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="8" height="12" rx="4"/><path d="M9.5 8a2.5 2.5 0 015 0M12 12v8M4 13h4M16 13h4M5 7l3 2.5M19 7l-3 2.5M5 19l3-2.5M19 19l-3-2.5"/></svg></span></div>
+      <h3>Website bug fixing</h3><p>Whether it is a broken layout, a failing checkout or a plugin conflict, I trace the real cause instead of patching symptoms. You get a clear explanation of what went wrong and a fix that lasts.</p></article>
+    <article class="svc"><div class="svc-top"><span class="svc-num">06</span><span class="svc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg></span></div>
+      <h3>Website maintenance</h3><p>I keep your site updated, backed up and secure so you can focus on running your business. Regular checks catch problems early, before your visitors ever notice them.</p></article>
+  </div>
+</section>
+
+<!-- OUR WORK: project cards are built from the PROJECTS list inside the script -->
+<section class="work" id="work">
+  <div class="work-head">
+    <h2><span class="l"><span>our work<sup>+</sup></span></span></h2>
+    <p>Selected projects, from a commercial SaaS platform to business websites. Hover a project to explore it, or tap on mobile.</p>
+  </div>
+  <div id="work-list"></div>
+</section>
+
+<!-- PROCESS: edit the steps here -->
+<section class="process" id="process">
+  <div class="process-head">
+    <h2><span class="l"><span>how i work<sup>+</sup></span></span></h2>
+    <p>A clear, predictable workflow from the first message to long-term support.</p>
+  </div>
+  <ol class="steps" id="steps">
+    <li class="step"><span class="step-num">01</span><h3>Discovery &<br>Requirements</h3><p>We talk through your goals, audience and budget so I fully understand what the project needs. You get a clear scope, timeline and price before anything starts.</p></li>
+    <li class="step"><span class="step-num">02</span><h3>Planning &<br>Strategy</h3><p>I map out the structure, features and technology that best fit your goals. Priorities and milestones are agreed up front, so there are no surprises later.</p></li>
+    <li class="step"><span class="step-num">03</span><h3>Design &<br>Development</h3><p>I turn the plan into a clean, responsive design and build it with maintainable code. You see steady progress and can share feedback along the way.</p></li>
+    <li class="step"><span class="step-num">04</span><h3>Testing &<br>Optimization</h3><p>I test across devices and browsers, fix issues and tune performance and security. Everything is checked thoroughly before it goes live.</p></li>
+    <li class="step"><span class="step-num">05</span><h3>Delivery &<br>Support</h3><p>I launch the project, hand everything over and walk you through it. Support stays available afterwards, so you are never left on your own.</p></li>
+  </ol>
+</section>
+
+<!-- REVIEWS: edit the REVIEWS list inside the script; edit the numbers in the two badges below -->
+<section class="reviews" id="reviews">
+  <div class="reviews-head">
+    <h2><span class="l"><span>client reviews<sup>+</sup></span></span></h2>
+    <p>Feedback from real clients on Upwork, in their own words.</p>
+  </div>
+  <div class="proof">
+    <div class="proof-item"><span class="proof-logo"><svg viewBox="0 0 24 24" role="img" aria-label="Upwork"><path fill="#14A800" d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/></svg></span><div><b>Top Rated</b><span>100% Job Success Score on Upwork</span></div></div>
+    <div class="proof-item"><span class="proof-logo"><svg viewBox="0 0 24 24" role="img" aria-label="Freelancer.com"><path fill="#29B2FE" d="M14.096 3.076l1.634 2.292L24 3.076M5.503 20.924l4.474-4.374-2.692-2.89m6.133-10.584L11.027 5.23l4.022.15M4.124 3.077l.857 1.76 4.734.294m-3.058 7.072l3.497-6.522L0 5.13m7.064 7.485l3.303 3.548 3.643-3.57 1.13-6.652-4.439-.228Z"/></svg></span><div><b>Top Rated</b><span>30+ projects completed on Freelancer.com</span></div></div>
+  </div>
+  <div class="rv-rows" id="rv-rows"></div>
+  <p class="rv-more"><a class="btn" href="https://www.upwork.com/freelancers/~0130f6d1f50aa998d6" target="_blank" rel="noopener">See all reviews on Upwork ↗</a></p>
+</section>
+
+<!-- LATEST ARTICLES: filled automatically from content/articles by build.js -->
+<section class="insights" id="insights">
+  <div class="insights-head">
+    <h2><span class="l"><span>latest articles<sup>+</sup></span></span></h2>
+    <p>Practical notes on building fast, reliable websites and web apps, for business owners and developers.</p>
+  </div>
+  <div class="post-grid">{{teaser}}</div>
+  <p class="insights-more"><a class="btn" href="articles/">Read all articles ↗</a></p>
+</section>
+
+<!-- CONTACT: edit your details here -->
+<section class="contact" id="contact">
+  <p class="open-badge"><i></i>Open to new projects</p>
+  <div class="contact-grid">
+    <div class="contact-intro">
+      <h2><span class="l"><span>let’s work<sup>+</sup></span></span><span class="l"><span>together</span></span></h2>
+      <p>I am open to new projects. Working with me means high-quality, professional results, from the first message to long-term support.</p>
+      <a class="btn" href="https://wa.me/8801612013433?text=Hi%20Mehedi%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener">Message me on WhatsApp ↗</a>
+    </div>
+    <ul class="contact-list">
+      <li><a href="https://wa.me/8801612013433?text=Hi%20Mehedi%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener"><span class="c-label">Phone / WhatsApp</span><span class="c-value">+8801612013433</span><span class="c-arrow" aria-hidden="true">↗</span></a></li>
+      <li><a href="mailto:mehedi.hasan.mern@gmail.com"><span class="c-label">Email</span><span class="c-value">mehedi.hasan.mern@gmail.com</span><span class="c-arrow" aria-hidden="true">↗</span></a></li>
+      <li><a href="https://www.upwork.com/freelancers/~0130f6d1f50aa998d6" target="_blank" rel="noopener"><span class="c-label">Upwork</span><span class="c-value">Hire me on Upwork</span><span class="c-arrow" aria-hidden="true">↗</span></a></li>
+    </ul>
+  </div>
+</section>
+
+{{footer}}
+
+<!-- libraries (CDN) -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<!-- site scripts: loaded in this order on purpose -->
+<script src="js/data.js"></script>
+<script src="js/config.js"></script>
+<script src="js/icons.js"></script>
+<script src="js/build.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/work.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/cursor.js"></script>
+<script src="js/hero.js"></script>
+<script src="js/scene.js"></script>
+<script src="js/marquee.js"></script>
+<script src="js/process.js"></script>
+<script src="js/reveals.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

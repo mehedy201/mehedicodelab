@@ -1,0 +1,74 @@
+/* css/hero.css — The pinned first screen: animated background, floating icons, hero text, proof badges, photo and the About text. */
+
+/* =============================================================
+   4. SCENE — one pinned screen: hero, then About
+   ============================================================= */
+.scene{position:relative;width:100%;height:100vh;height:100svh;min-height:540px;overflow:hidden}
+
+/* animated background: dots, soft glow, drifting code */
+.bg{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.bg-grid{position:absolute;inset:0;background:radial-gradient(var(--line) 1.3px,transparent 1.3px) 0 0/30px 30px;
+  -webkit-mask-image:radial-gradient(ellipse at 65% 50%,#000 25%,transparent 80%);mask-image:radial-gradient(ellipse at 65% 50%,#000 25%,transparent 80%);animation:grid 12s linear infinite}
+.bg-glow{position:absolute;left:-12vmax;bottom:-16vmax;width:40vmax;height:40vmax;border-radius:50%;background:radial-gradient(circle,#7C5CFF,transparent 65%);opacity:.18;filter:blur(80px);animation:drift 20s ease-in-out infinite alternate}
+.bg-code{position:absolute;top:0;right:4vw;font:12px/1.8 ui-monospace,Menlo,Consolas,monospace;white-space:pre;opacity:.09;animation:codeUp 60s linear infinite}
+.hero-word{position:absolute;left:5vw;bottom:15px;transform-origin:0 100%;font-size:clamp(5rem,24vw,22rem);font-weight:800;line-height:.8;letter-spacing:-.06em;white-space:nowrap;color:transparent;-webkit-text-stroke:1px rgba(18,18,18,.08);user-select:none}
+@keyframes grid{to{background-position:30px 30px}}
+@keyframes drift{to{transform:translate(8vmax,-6vmax) scale(1.15)}}
+@keyframes codeUp{to{transform:translateY(-50%)}}
+
+/* icons and stars (created by JS) */
+.stage{position:absolute;inset:0;z-index:1;pointer-events:none}
+.ico,.rp{position:absolute;width:0;height:0}
+.ico{left:var(--dx);top:var(--dy)}
+.ib{position:absolute;width:var(--icon-size);height:var(--icon-size);margin:calc(var(--icon-size)/-2) 0 0 calc(var(--icon-size)/-2);animation:twinkle var(--d,2.4s) ease-in-out var(--delay,0s) infinite alternate}
+.ib svg{display:block;width:100%;height:100%}
+.ib.dot{width:4px;height:4px;margin:-2px 0 0 -2px;border-radius:50%;background:var(--c,var(--ink))}
+.slot{position:absolute;left:91%;top:50%;width:clamp(40px,4vw,58px);aspect-ratio:1;transform:translate(-50%,-50%)}  /* start point of the photo star */
+@keyframes twinkle{from{opacity:.35;transform:scale(.8)}to{opacity:1;transform:translate(var(--tx,0),var(--ty,0)) scale(1.15)}}
+
+/* Freelancer badge: pulsing liquid glass; travels with the photo into About */
+.badge{position:absolute;left:50%;top:50%;z-index:6;display:flex;align-items:center;gap:.6rem;width:max-content;padding:.4rem 1.1rem .4rem .4rem;overflow:hidden;opacity:0;font-size:.85rem;font-weight:500;line-height:1.2;--ring:#29B2FE;
+  border:1px solid rgba(255,255,255,.6);border-radius:99px;background:linear-gradient(135deg,rgba(255,255,255,.45),rgba(255,255,255,.15));
+  -webkit-backdrop-filter:blur(14px) saturate(1.6);backdrop-filter:blur(14px) saturate(1.6);animation:pulse 2.8s ease-out infinite}
+.badge.up{--ring:#14A800}
+.badge.up .badge-liquid{background:radial-gradient(circle at 28% 40%,rgba(20,168,0,.4),transparent 42%),radial-gradient(circle at 74% 62%,rgba(190,235,160,.55),transparent 42%)}
+.badge-slot{position:relative;left:auto;top:auto;z-index:auto;visibility:hidden;animation:none}   /* invisible twin in the text line: marks where the badge starts */
+.badge-liquid{position:absolute;inset:-40%;z-index:-1;background:radial-gradient(circle at 28% 40%,rgba(41,178,254,.55),transparent 42%),radial-gradient(circle at 74% 62%,rgba(110,231,183,.5),transparent 42%);filter:blur(8px);animation:liquid 14s linear infinite}
+.badge-logo{display:grid;place-items:center;flex:none;width:2.2rem;height:2.2rem;border-radius:50%;background:#fff}
+.badge-logo svg{width:1.2rem;height:1.2rem}
+.badge-text{display:flex;flex-direction:column;line-height:1.2}
+.badge-text b{font-weight:800;letter-spacing:-.02em}
+.badge-text span{font-size:.72rem;color:var(--muted)}
+@keyframes pulse{0%{box-shadow:inset 0 1px 0 #fff,0 0 0 0 color-mix(in srgb,var(--ring) 35%,transparent)}70%,100%{box-shadow:inset 0 1px 0 #fff,0 0 0 14px transparent}}   /* ring only grows outward, then restarts */
+.badge::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.55) 50%,transparent 65%);transform:translateX(-120%);animation:shine 3.6s ease-in-out infinite}
+@keyframes shine{0%{transform:translateX(-120%)}55%,100%{transform:translateX(120%)}}
+@keyframes liquid{to{transform:rotate(360deg)}}
+
+/* hero text */
+.hero{position:absolute;inset:0;z-index:2;width:var(--hero-width);display:flex;flex-direction:column;padding:4.8rem 0 2rem 5vw}
+.hero-inner{margin:auto 0}
+.hi{display:flex;flex-direction:column;margin-bottom:.8rem;font-size:clamp(1.1rem,2vw,1.7rem);font-weight:500;line-height:1.25}
+.hi-row{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1.2rem}
+.hi-badges{display:flex;flex-wrap:wrap;gap:.6rem}
+.heads{display:grid}
+.set{grid-area:1/1;opacity:0}.set:first-child{opacity:1}
+.l{display:block;overflow:hidden;padding-bottom:.06em}
+.l span{display:block;font-size:var(--h1-size);font-weight:800;line-height:.95;letter-spacing:-.05em}
+.l sup{margin-left:.04em;font-size:.5em;font-weight:700;vertical-align:.55em;color:var(--accent)}
+.bio{max-width:34rem;margin-top:1.5rem;color:var(--muted)}
+.meta{display:flex;flex-direction:column;gap:.15rem;margin-top:1.2rem;font-weight:500}
+.meta a:hover{color:var(--accent)}
+.hero .btn{align-self:flex-start;margin-top:1.6rem}
+
+/* photo: small star first, then grows into About */
+.photo{position:absolute;left:50%;top:50%;z-index:5;width:var(--photo-size);aspect-ratio:1;margin:calc(var(--photo-size)/-2) 0 0 calc(var(--photo-size)/-2);transform:scale(.08);will-change:transform}
+.pf,.pf img{display:block;width:100%;height:100%}
+.pf img{border-radius:50%;box-shadow:0 0 0 clamp(4px,.6vw,8px) var(--bg),0 24px 60px rgba(18,18,18,.2)}
+.pf.twinkle{animation:twinkle 2.1s ease-in-out infinite alternate}
+
+/* about: fades in from the right */
+.about{position:absolute;inset:0;z-index:4;display:flex;align-items:center;justify-content:flex-end;padding:0 5vw}
+.about div{width:min(36rem,38vw)}
+.about h2{margin-bottom:1.3rem;font-size:clamp(2.2rem,4.4vw,4.2rem);font-weight:800;line-height:.98;letter-spacing:-.045em}
+.about p{margin-bottom:1rem;color:var(--muted)}
+.about .btn{margin-top:.6rem}

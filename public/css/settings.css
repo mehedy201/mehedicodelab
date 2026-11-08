@@ -1,0 +1,18 @@
+/* css/settings.css — Colors, font and sizes. Change the look of the whole site from this one file. */
+
+/* =============================================================
+   1. SETTINGS — colors, font and sizes. Edit here only.
+   ============================================================= */
+:root{
+  --bg:#F2F0EA; --ink:#121212; --muted:#6B6A66; --accent:#FF4D1F; --line:#D9D6CC;
+  --font:"Archivo",system-ui,sans-serif;
+  --services-bg:#f73326;                    /* Services section background */
+  --h2-size:clamp(2.6rem,9vw,9rem);         /* big section titles */
+  --calm-bg:#12302F; --calm-ink:#F2F0EA; --calm-muted:rgba(242,240,234,.66); --calm-accent:#E9C46A;   /* Reviews: calm deep-teal palette */
+  --hero-width:80%;                         /* left text area on desktop */
+  --h1-size:clamp(2.6rem,8.5vw,10rem);      /* big headline */
+  --icon-size:clamp(21px,calc(2.7vw - 5px),35px);
+  --photo-size:min(60vmin,500px);           /* photo size inside About */
+  --menu-size:50px;                         /* menu link size */
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0);padding-bottom:env(safe-area-inset-bottom,0);
+}

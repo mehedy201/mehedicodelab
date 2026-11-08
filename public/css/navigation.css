@@ -1,0 +1,37 @@
+/* css/navigation.css — Top bar (logo + Menu button), liquid-glass bar that appears on scroll, and the full-screen menu. */
+
+/* =============================================================
+   3. NAVIGATION + FULL-SCREEN MENU
+   ============================================================= */
+nav{position:fixed;inset:0 0 auto;z-index:40;display:flex;justify-content:space-between;align-items:center;padding:calc(1.1rem + env(safe-area-inset-top,0)) 5vw 1.1rem;transition:color .4s}
+nav b{font-weight:800;font-size:1.3rem;letter-spacing:-.02em}
+/* liquid-glass bar: invisible at the top, fades in once the page is scrolled */
+nav::before{content:"";position:absolute;inset:calc(.45rem + env(safe-area-inset-top,0)) 2.2vw .45rem;z-index:-1;border:1px solid rgba(255,255,255,.4);border-radius:99px;
+  background:linear-gradient(135deg,rgba(255,255,255,.26),rgba(242,240,234,.1));-webkit-backdrop-filter:blur(14px) saturate(1.6);backdrop-filter:blur(14px) saturate(1.6);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 4px 16px rgba(18,18,18,.05);
+  opacity:0;transform:translateY(-12px) scale(.98);transition:opacity .5s,transform .6s cubic-bezier(.2,.8,.2,1),background .4s,border-color .4s}
+nav.on-dark{color:#F2F0EA}   /* light text and a dark glass bar while the bar is over a dark section */
+nav.on-dark::before{border-color:rgba(255,255,255,.14);background:linear-gradient(135deg,rgba(18,18,18,.42),rgba(18,18,18,.22))}
+nav.scrolled::before{opacity:1;transform:none}
+body.menu-open nav::before{opacity:0}
+.burger{display:flex;align-items:center;gap:.8rem;padding:.4rem 0;border:0;background:none;color:inherit;font:inherit;font-weight:500;cursor:pointer}
+.burger i{position:relative;display:block;width:30px;height:10px}
+.burger i::before,.burger i::after{content:"";position:absolute;left:0;width:100%;height:2px;background:currentColor;transition:transform .5s cubic-bezier(.7,0,.2,1),top .5s cubic-bezier(.7,0,.2,1)}
+.burger i::before{top:0}.burger i::after{top:8px}
+body.menu-open nav{color:#F2F0EA}
+body.menu-open .burger i::before{top:4px;transform:rotate(45deg)}
+body.menu-open .burger i::after{top:4px;transform:rotate(-45deg)}
+
+.menu{position:fixed;inset:0;z-index:30;display:flex;flex-direction:column;justify-content:center;padding:6rem 5vw 2.5rem;background:#121212;color:#F2F0EA;
+  clip-path:circle(0% at calc(100% - 5vw - 1rem) 2.4rem);visibility:hidden}
+.menu.is-on{visibility:visible}
+.menu-grid{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:end}
+.menu ol{list-style:none;padding:0}
+.menu li{overflow:hidden;border-bottom:1px solid rgba(242,240,234,.14)}
+.menu li a{display:flex;align-items:baseline;gap:1.2rem;padding:.3em 0;font-size:var(--menu-size);font-weight:800;line-height:1;letter-spacing:-.04em;transition:color .3s,padding .4s,opacity .3s}
+.menu li small{font-size:.9rem;font-weight:500;letter-spacing:0;color:var(--accent)}
+.menu ol:hover a{opacity:.35}
+.menu ol a:hover{opacity:1;color:var(--accent);padding-left:.25em}
+.menu-side{display:flex;flex-direction:column;gap:.35rem;font-weight:500;text-align:right}
+.menu-side span{margin-top:.8rem;font-size:.9rem;color:#9a988f}
+.menu-side a:hover{color:var(--accent)}

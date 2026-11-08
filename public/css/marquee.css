@@ -1,0 +1,11 @@
+/* css/marquee.css — Infinite text slider after About. */
+
+/* =============================================================
+   4b. MARQUEE — infinite text slider after About
+   ============================================================= */
+.marquee{overflow:hidden;padding:clamp(1.5rem,4vw,3rem) 0;border-block:1px solid var(--line)}
+.marquee-track{display:flex;width:max-content;will-change:transform}
+.marquee-group{display:flex;flex:none}
+.marquee-item{padding-right:clamp(1.5rem,3vw,3rem);font-size:clamp(2rem,6vw,5.5rem);font-weight:800;line-height:1.1;letter-spacing:-.045em;white-space:nowrap}
+.marquee-item::after{content:"+";margin-left:clamp(1.5rem,3vw,3rem);color:var(--accent);-webkit-text-stroke:0}
+.marquee-item:nth-child(even){color:transparent;-webkit-text-stroke:1.5px var(--ink)}

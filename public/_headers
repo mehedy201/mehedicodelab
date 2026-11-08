@@ -1,0 +1,14 @@
+# Used by Cloudflare Pages and Netlify: security headers + caching
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+/css/*
+  Cache-Control: public, max-age=86400
+/js/*
+  Cache-Control: public, max-age=86400
+/images/*
+  Cache-Control: public, max-age=604800
+/covers/*
+  Cache-Control: public, max-age=604800

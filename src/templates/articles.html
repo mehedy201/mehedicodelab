@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+{{seo}}
+<link rel="alternate" type="application/rss+xml" title="Articles" href="/rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/settings.css">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/navigation.css">
+<link rel="stylesheet" href="/css/footer.css">
+<link rel="stylesheet" href="/css/blog.css">
+</head>
+<body class="blog">
+{{nav}}
+<main>
+  <header class="blog-hero">
+    <p class="post-chip">Articles</p>
+    <h1>Notes on building fast, reliable websites<sup>+</sup></h1>
+    <p>Guides and case studies on WordPress, Elementor, React, Next.js and full-stack development. Written for business owners who hire, and developers who build.</p>
+    <div class="filters" role="group" aria-label="Filter by topic">{{filters}}</div>
+  </header>
+  <div class="post-grid index">{{cards}}</div>
+</main>
+{{footer}}
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script>window.PF = { $: id => document.getElementById(id) };</script>
+<script src="/js/menu.js"></script>
+<script src="/js/nav.js"></script>
+<script src="/js/blog.js"></script>
+</body>
+</html>

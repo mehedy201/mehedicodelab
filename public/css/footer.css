@@ -1,0 +1,18 @@
+/* css/footer.css — Footer with big outlined name. */
+
+/* =============================================================
+   4h. FOOTER
+   ============================================================= */
+.footer{overflow:hidden;padding:clamp(3rem,6vw,5rem) 5vw 0;background:#121212;color:var(--bg)}
+.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr auto;gap:2rem;padding-bottom:clamp(2rem,5vw,4rem)}
+.f-brand b{font-size:1.6rem;font-weight:800;letter-spacing:-.03em}
+.f-brand p{max-width:22rem;margin-top:.8rem;color:rgba(242,240,234,.62)}
+.f-col{display:flex;flex-direction:column;gap:.5rem}
+.f-col h4{margin-bottom:.4rem;font-size:.85rem;font-weight:500;color:rgba(242,240,234,.5)}
+.f-col a{width:fit-content;transition:color .3s,transform .3s}
+.f-col a:hover{color:var(--accent);transform:translateX(4px)}
+.f-top{align-self:start;padding:.7rem 1.3rem;border:1px solid rgba(242,240,234,.25);border-radius:99px;transition:background .3s,color .3s}
+.f-top:hover{background:var(--bg);color:#121212}
+.footer-word{font-size:clamp(5rem,24vw,22rem);font-weight:800;line-height:.8;letter-spacing:-.06em;white-space:nowrap;color:transparent;-webkit-text-stroke:1px rgba(242,240,234,.2);user-select:none}
+.footer-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 2rem;padding:1.4rem 0 1.8rem;border-top:1px solid rgba(242,240,234,.14);font-size:.88rem;color:rgba(242,240,234,.55)}
+@media(max-width:900px){.footer-top{grid-template-columns:1fr 1fr}.f-brand{grid-column:1/-1}}

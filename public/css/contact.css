@@ -1,0 +1,24 @@
+/* css/contact.css — Contact section. */
+
+/* =============================================================
+   4g. CONTACT
+   ============================================================= */
+.contact{padding:clamp(4rem,9vw,9rem) 5vw}
+.open-badge{display:inline-flex;align-items:center;gap:.7rem;margin-bottom:clamp(1.5rem,3vw,2.5rem);padding:.45rem 1.1rem;border:1px solid var(--line);border-radius:99px;font-weight:500}
+.open-badge i{position:relative;width:9px;height:9px;border-radius:50%;background:#2EBD59}
+.open-badge i::after{content:"";position:absolute;inset:0;border-radius:50%;background:inherit;animation:ping 2s ease-out infinite}
+@keyframes ping{to{transform:scale(3);opacity:0}}
+.contact-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(2rem,6vw,6rem);align-items:end}
+.contact h2 .l span{font-size:clamp(2.6rem,7.4vw,7.6rem)}
+.contact-intro p{max-width:30rem;margin:1.5rem 0 2rem;color:var(--muted)}
+.contact-list{margin:0;padding:0;list-style:none;border-bottom:1px solid var(--line)}
+.contact-list li{position:relative;border-top:1px solid var(--line)}
+.contact-list li::before{content:"";position:absolute;inset:-1px 0 auto;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .6s cubic-bezier(.7,0,.2,1)}
+.contact-list li:hover::before{transform:scaleX(1)}
+.contact-list a{display:grid;grid-template-columns:1fr auto;gap:.2rem 1rem;padding:1.4rem 0;transition:padding .4s}
+.contact-list a:hover{padding-left:.6rem}
+.c-label{grid-column:1;font-size:.9rem;font-weight:500;color:var(--muted)}
+.c-value{grid-column:1;font-size:clamp(1.15rem,2.4vw,2rem);font-weight:800;line-height:1.1;letter-spacing:-.03em;overflow-wrap:anywhere}
+.c-arrow{grid-column:2;grid-row:1/3;align-self:center;font-size:1.6rem;transition:transform .4s,color .3s}
+.contact-list a:hover .c-arrow{transform:translate(4px,-4px);color:var(--accent)}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr}}

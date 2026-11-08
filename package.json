@@ -1,0 +1,14 @@
+{
+  "name": "mehedi-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfolio + articles. Markdown in content/articles becomes static pages in dist/.",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js --serve",
+    "start": "node build.js --serve"
+  },
+  "dependencies": { "marked": "^15.0.0" },
+  "optionalDependencies": { "sharp": "^0.33.0" },
+  "engines": { "node": ">=18" }
+}
