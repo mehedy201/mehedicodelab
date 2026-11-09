@@ -3,7 +3,7 @@
 /* =============================================================
    4e. PROCESS — five steps on one line; the line fills as you scroll
    ============================================================= */
-.process{padding:clamp(4rem,9vw,9rem) 5vw;border-top:1px solid var(--line)}
+.process{padding: 0 5vw clamp(4rem, 9vw, 9rem)}
 .process-head,.reviews-head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin-bottom:clamp(2.5rem,6vw,5rem)}
 .process-head .l span,.reviews-head .l span{font-size:var(--h2-size)}
 .process-head p,.reviews-head p{max-width:24rem;padding-bottom:1rem;color:var(--muted)}
