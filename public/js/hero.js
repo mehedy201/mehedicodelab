@@ -20,3 +20,9 @@ lines.forEach((cur, i) => rotate
   .fromTo(lines[(i+1) % lines.length], { yPercent:115 }, { yPercent:0, duration:.8, stagger:.08, ease:"power3.out" }, "-=.15")
   .to({}, { duration:HEADLINE_WAIT }));
 };
+
+window.addEventListener("load", function () {
+  setTimeout(function () {
+    document.getElementById("about").style.display = "";
+  }, 500);
+});

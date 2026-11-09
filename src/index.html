@@ -87,7 +87,7 @@ app.get("/api/projects", async (req, res) => {
   </div></header>
 
   <div class="photo" id="photo"><div class="pf twinkle" id="pf"><!-- Photo: loaded from GitHub. For best speed, download it once, save it as images/photo.jpg and replace the src below. If it cannot load, images/photo.webp is used. -->
-    <img src="https://avatars.githubusercontent.com/u/52112265?s=400&u=6d6f818adab4645ceb45ebc900f3bff86c8951ea&v=4" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='images/photo.webp'" alt="Portrait of Mehedi" width="400" height="400"></div></div>
+    <img src="/public/images/photo.webp" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='images/photo.webp'" alt="Portrait of Mehedi" width="400" height="400"></div></div>
 
   <div class="badge up">
     <span class="badge-liquid" aria-hidden="true"></span>
@@ -101,7 +101,7 @@ app.get("/api/projects", async (req, res) => {
   </div>
 
   <!-- ABOUT TEXT: edit your text here -->
-  <section class="about" id="about"><div>
+  <section class="about" id="about" style="display: none;"><div>
     <h2>Reliable Technology Partner</h2>
     <p>I help businesses turn ideas into high-quality digital experiences, from modern websites to custom web applications.</p>
     <p>With strong experience in Full-Stack Development and WordPress, I focus on building solutions that are visually appealing, technically reliable, user-friendly, and designed to grow with your business.</p>
