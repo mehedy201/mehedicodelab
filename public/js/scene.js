@@ -27,6 +27,7 @@ function buildScroll(wide) {
     .to(".hero-word", { scale:.7, duration:3.2 }, 0)
     .to(".hero-word", { opacity:0, duration:1.4, ease:"power1.in" }, 3.2)
     .to("#hero", { opacity:0, y:-50, duration:1.4 }, .1)
+    .set(".about", { zIndex:4 }, 2.2)
     .fromTo(".about>div>*", { opacity:0, x:wide ? 110 : 0, y:wide ? 0 : 36 }, { opacity:1, x:0, y:0, duration:1.2, stagger:.18, ease:"power3.out" }, 2.2)
     .to({}, { duration:.9 });
 }
