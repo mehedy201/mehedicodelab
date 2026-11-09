@@ -13,6 +13,6 @@
   --h1-size:clamp(2.6rem,8.5vw,10rem);      /* big headline */
   --icon-size:clamp(21px,calc(2.7vw - 5px),35px);
   --photo-size:min(60vmin,500px);           /* photo size inside About */
-  --menu-size:50px;                         /* menu link size */
+  --menu-size:40px;                         /* menu link size */
   box-sizing:border-box;padding-top:env(safe-area-inset-top,0);padding-bottom:env(safe-area-inset-bottom,0);
 }
