@@ -72,3 +72,8 @@
 .about h2{margin-bottom:1.3rem;font-size:clamp(2.0rem,4.2vw,4.0rem);font-weight:800;line-height:.98;letter-spacing:-.045em}
 .about p{margin-bottom:1rem;color:var(--muted)}
 .about .btn{margin-top:.6rem}
+
+
+
+@media(max-width:768px){.l span{font-size:var(--h2-size);}}
+
